@@ -26,7 +26,7 @@ class CartStore extends Reflux.Store {
 
     removeItem(item){
         let items = this.state.items;
-        items.remove(item);
+        items.splice(items.indexOf(item),1);
         this.setState({
             items: items
         });

@@ -40,13 +40,19 @@ class Cart extends Reflux.Component{
         history.push(newLocation);
     }
 
+    removeItem(item){
+        CartActions.removeItem(item);
+    }
+
     render(){
         return(
             <div>
                 <button onClick={()=>{this.goto('/')}}>Home</button>
                 <button onClick={()=>{this.goto('/shop')}}>Shop</button>
                 <button onClick={()=>{this.addItem()}}>Add Item</button>
-                {this.state.items.map( item => <p>{item}</p> )}
+                {this.state.items.map( item => 
+                    <p>{item} <button onClick={()=>{this.removeItem(item)}}>Delete item</button></p> 
+                )}
             </div>
         )
     }

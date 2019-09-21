@@ -1,5 +1,6 @@
-import {request,axiosRequest} from "./request.js";
-import axios from 'axios';
+import {request} from "./request.js";
+//import {axiosRequest} from "./request.js";
+//import axios from 'axios';
 
 // At which endpoint the api is located
 // we will use this for the example getting mock data
@@ -19,14 +20,14 @@ export const login = (payload) => {return request( url + 'login/' ,{body:JSON.st
 
 ///FILES
 // this is going to be used only with files
-export const downloadFile = (payload) => {
-  return axios({
-    method: 'GET',
-    responseType: 'blob',
-    url: url + 'download?filename='+payload.fileName + '&version=' + payload.version,
-    headers:{
-      token: sessionStorage.getItem( 'authToken' )
-    }
-  });
- };
-export const uploadFile = (payload) => {return axiosRequest( url + 'download/' , payload ) };
+// export const downloadFile = (payload) => {
+//   return axios({
+//     method: 'GET',
+//     responseType: 'blob',
+//     url: url + 'download?filename='+payload.fileName + '&version=' + payload.version,
+//     headers:{
+//       token: sessionStorage.getItem( 'authToken' )
+//     }
+//   });
+//  };
+// export const uploadFile = (payload) => {return axiosRequest( url + 'download/' , payload ) };
